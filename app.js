@@ -78,6 +78,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/arjs', function(req, res) {
+    res. header("Access-Control-Allow-Origin", "*");
   res.sendFile(path.join(__dirname, 'arjs.html'));
 });
 
