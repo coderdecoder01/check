@@ -10,6 +10,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const cors = require('cors')
 
 
 var firebase = require("firebase-admin");
@@ -78,7 +79,7 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.get('/arjs', function(req, res) {
+app.get('/arjs', cors(), function(req, res) {
     res.header("Access-Control-Allow-Origin", "*");
   res.sendFile(path.join(__dirname, 'arjs.html'));
 });
