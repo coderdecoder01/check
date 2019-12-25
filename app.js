@@ -28,6 +28,7 @@ app.get('/locations', async (request, response) => {
         const locationsRef = database.ref('locations');
         const locations = await locationsRef.once('value');
         locations.forEach(function(snapshot) {
+          console.log('snapshot by pat==',snapshot);
             result.push({
                 name:snapshot.val().name,
                 desciption:snapshot.val().description?snapshot.val().description:'Empty Description',
